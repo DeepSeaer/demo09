@@ -1,0 +1,54 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/local_test?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&pinGlobalTxToPhysicalConnection=true&useSSL=false
+    username: root
+    password: root
+#  jpa:
+#    database: MySQL
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  redis:
+#    hostName: 127.0.0.1
+    hostName: 47.105.149.120
+    port: 6379
+    password: 119900aa
+    pool:
+      maxActive: 8
+      maxWait: -1
+      maxIdle: 8
+      minIdle: 0
+    timeout: 0
+
+hibernate:
+  entitymanager:
+    packagesToScan: com.cn.entity
+
+# 阿里云短信发送服务
+sms:
+  aliyun:
+    # 短信API产品名称（短信产品名固定，无需修改）
+    product: Dysmsapi
+    # 短信API产品域名（接口地址固定，无需修改）
+    doMain: dysmsapi.aliyuncs.com
+    # 区域Id(固定值)
+    regionId: cn-hangzhou
+    # 端点名称(固定值)
+    endpointName: cn-hangzhou
+    # 短信签名
+    signName: 木晗
+    # 短信模板ID
+    templateCode: SMS_193508960
+    # AccessKey
+    accessKeyId: LTAI4G5bCMU1bfcABmuqdGp5
+    # AccessKeySecret
+    accessKeySecret: S8vxZ4G0Jh826CWoL8HvDwWEt1hbtn
